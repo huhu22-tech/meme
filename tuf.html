@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="tuf.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="hbd">HAPPY <br>BIRTHDAY<br> <span class="tufff">TUFF</span></h1>
+    <img class="almirah" src="almirah.gif" alt="Almirah GIF">
+    <img src="tuff.gif" alt="" class="tuff">
+    <button class="action-button"></button>
+    <script>
+        const actionButton = document.querySelector('.action-button');
+        const almirahImage = document.querySelector('.almirah');
+
+        almirahImage.style.display = 'none'; // Hide almirah initially
+
+        actionButton.addEventListener('click', () => {
+            almirahImage.style.display = 'block'; // Show almirah when button is pressed
+        });
+    </script>
+    <img class="cake" src="cake.gif" alt="Cake GIF" style="display: none;">
+
+    <script>
+        const cakeImage = document.querySelector('.cake');
+        const hbdText = document.querySelector('.hbd');
+
+        // Hide the happy birthday text initially
+        hbdText.style.display = 'none';
+
+        actionButton.addEventListener('click', () => {
+            // Show happy birthday text when button is pressed
+            hbdText.style.display = 'block';
+
+            setTimeout(() => {
+                cakeImage.style.display = 'block'; // Show cake after 2 seconds
+                cakeImage.style.animation = 'bounce 2s infinite'; // Add animation
+            }, 2000);
+        });
+
+        // Add keyframes for bounce animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes bounce {
+                0%, 20%, 50%, 80%, 100% {
+                    transform: translateY(0);
+                }
+                40% {
+                    transform: translateY(-30px);
+                }
+                60% {
+                    transform: translateY(-15px);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+    <audio src="me.mp3"></audio>
+    <script>
+        
+        const audio = document.querySelector('audio');
+        audio.loop = true; // Enable looping for the audio
+        audio.currentTime = 39; // Start audio from 39 seconds
+        audio.play(); // Play the audio
+    </script>
+</body>
+</html>
